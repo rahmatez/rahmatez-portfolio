@@ -64,7 +64,7 @@ export function ResumePage() {
               </div>
 
               {/* PDF Viewer */}
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-3 sm:p-6 border border-gray-200 dark:border-gray-700 max-w-full overflow-hidden">
+              <div>
                 <Document
                   file={pdfFile}
                   className="flex flex-col items-center space-y-4 sm:space-y-6"
