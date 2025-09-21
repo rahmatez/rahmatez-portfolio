@@ -92,6 +92,32 @@ html, body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* PDF Mobile Optimization */
+.pdf-page-container {
+  @apply w-full flex justify-center;
+}
+
+.pdf-page-container > div {
+  @apply max-w-full;
+}
+
+/* Ensure PDF canvas doesn't overflow on mobile */
+.pdf-page-container canvas {
+  @apply max-w-full h-auto;
+  display: block !important;
+}
+
+/* React-PDF specific mobile fixes */
+.react-pdf__Page {
+  @apply max-w-full;
+}
+
+.react-pdf__Page__canvas {
+  @apply max-w-full h-auto;
+  width: auto !important;
+  height: auto !important;
+}
+
 /* Optimize images and transitions */
 img {
   @apply transform-gpu;
