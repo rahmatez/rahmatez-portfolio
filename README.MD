@@ -11,7 +11,7 @@
 
 ## 🌟 Live Demo
 
-🔗 **[https://rahmatez-portfolio.vercel.app](https://rahmatez-portfolio.vercel.app)**
+🔗 **[https://rahmatez.vercel.app](https://rahmatez.vercel.app)**
 
 ## 📋 Table of Contents
 
@@ -104,7 +104,7 @@ This is a modern, fully responsive portfolio website built with React, TypeScrip
 1. **Clone the repository**
    ```bash
    git clone https://github.com/rahmatez/rahmatez-portfolio.git
-   cd rahmat-ashari-portfolio
+   cd rahmat-portfolio
    ```
 
 2. **Install dependencies**
@@ -145,7 +145,7 @@ npm run deploy       # Deploy to GitHub Pages (if configured)
 ## 📁 Project Structure
 
 ```
-rahmat-ashari-portfolio/
+rahmat-portfolio/
 ├── public/                 # Static assets
 │   ├── assets/            # Images, PDFs, certificates
 │   │   ├── *.jpg          # Project screenshots
@@ -288,7 +288,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 📧 Email: [rahmatez@example.com](mailto:rahmatez@example.com)
 - 💼 LinkedIn: [linkedin.com/in/rahmat-ashari](https://linkedin.com/in/rahmat-ashari)
 - 🐱 GitHub: [github.com/rahmatez](https://github.com/rahmatez)
-- 🌐 Website: [rahmat-ashari-portfolio.vercel.app](https://rahmatez-portfolio.vercel.app)
+- 🌐 Website: [https://rahmatez.vercel.app](https://rahmatez.vercel.app)
 
 ---
 
