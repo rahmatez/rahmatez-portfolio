@@ -20,6 +20,13 @@ import {
   SiMongodb,
   SiPostgresql,
   SiApachespark,
+  SiPhp,
+  SiLaravel,
+  SiCodeigniter,
+  SiMysql,
+  SiBootstrap,
+  SiJquery,
+  SiTailwindcss
 } from 'react-icons/si';
 import { FaChartBar, FaProjectDiagram } from 'react-icons/fa';
 
@@ -45,61 +52,125 @@ const techStacks = {
   mongodb: { icon: SiMongodb, name: 'MongoDB', color: '#47A248' },
   postgresql: { icon: SiPostgresql, name: 'PostgreSQL', color: '#336791' },
   spark: { icon: SiApachespark, name: 'Apache Spark', color: '#E25A1C' },
+  php: { icon: SiPhp, name: 'PHP', color: '#777BB4' },
+  laravel: { icon: SiLaravel, name: 'Laravel', color: '#FF2D20' },
+  codeigniter: { icon: SiCodeigniter, name: 'CodeIgniter', color: '#EF4223' },
+  mysql: { icon: SiMysql, name: 'MySQL', color: '#4479A1' },
+  bootstrap: { icon: SiBootstrap, name: 'Bootstrap', color: '#7952B3' },
+  jquery: { icon: SiJquery, name: 'jQuery', color: '#0769AD' },
+  tailwind : { icon: SiTailwindcss, name: 'Tailwind CSS', color: '#38B2AC' }, // Using CSS icon for Tailwind
 };
 
 // Define projects
 const projects = [
   {
-    title: 'IPL Victory Probability Estimator',
-    description: `Developed a machine learning pipeline to forecast live IPL match win probabilities. 
-Extracted predictive features from historical and in-game data. 
-Trained a classification model for dynamic probability updates. 
-Implemented an interactive Streamlit web application. 
-Provided real-time insights for users during matches. 
-Focused on accuracy and usability in live conditions.`,
-    image: '/assets/ipl.jpg',
-    link: 'https://iplvictoryestimatorbyarun.streamlit.app/',
-    github: 'https://github.com/arun-248/ipl-victory-prediction-system.git',
+    title: 'e-Ticketing System Brigata Curva Sud',
+    description: `As a full-stack developer for the Brigata Curva Sud e-Ticketing System. This web-based application was developed using Laravel 10
+    to facilitates online match ticket booking for BCS supporters. The application is integrated with Midtrans for secure payments, 
+    generates tickets with unique QR codes for validation, and features match management, sales reporting, notifications, and contact support.`,
+    image: '/assets/project/project1.png',
+    link: 'https://github.com/rahmatez/',
+    github: 'https://github.com/rahmatez/',
     techStack: [
-      techStacks.python,
-      techStacks.scikit,
-      techStacks.streamlit,
-      techStacks.pandas,
-      techStacks.numpy,
-      techStacks.jupyter
+      techStacks.php,
+      techStacks.laravel,
+      techStacks.mysql,
+      techStacks.bootstrap,
+      techStacks.js,
+      techStacks.css
     ],
   },
+
   {
-    title: 'Personalized Book Recommender',
-    description: `Built a collaborative filtering system to provide personalized book suggestions. 
-Analyzed user-book interactions using Python and Scikit-learn. 
-Engineered a system that processes large datasets efficiently. 
-Created a full-stack web app with Streamlit. 
-Focused on generating accurate and relevant recommendations. 
-Demonstrates end-to-end development skills.`,
-    image: '/assets/book.jpg',
-    link: 'https://arunpersonalizedbookrecommender.streamlit.app/',
-    github: 'https://github.com/arun-248/Personalized-Book-Recommender.git',
+    title: 'PTIP Logistics System',
+    description: `Developed and added a cancellation feature to all menus in the PTIP Logistics System. 
+    This application is a comprehensive logistics management application with features 
+    covering the entire procurement and inventory management cycle. Built with a solid 
+    MVC architecture using CodeIgniter, this system demonstrates a strong understanding 
+    of business processes in the construction logistics sector.`,
+    image: '/assets/project/project2.png',
+    link: 'https://github.com/rahmatez/',
+    github: 'https://github.com/rahmatez/',
     techStack: [
-      techStacks.python,
-      techStacks.scikit,
-      techStacks.streamlit,
-      techStacks.pandas,
-      techStacks.numpy,
-      techStacks.colab
+      techStacks.php,
+      techStacks.codeigniter,
+      techStacks.mysql,
+      techStacks.jquery,
+      techStacks.bootstrap,
+      techStacks.js
     ],
   },
+
   {
-    title: 'Stock Trend Analyzer',
+    title: 'Member Information System Application',
+    description: `As a full-stack developer for the Member Information System Application
+    for the Saka Millennial organization in Banyumas Regency, this application is a modern
+    digital solution designed to support effectiveness and efficiency in community management.
+    By providing features such as member management, activities, and articles in one centralized platform`,
+    image: '/assets/project/project3.png',
+    link: 'https://github.com/rahmatez/',
+    github: 'https://github.com/rahmatez/',
+    techStack: [
+      techStacks.php,
+      techStacks.laravel,
+      techStacks.mysql,
+      techStacks.tailwind,
+      techStacks.js,
+      techStacks.css
+    ],
+  },
+
+  {
+    title: 'Rahmatez-Portfolio',
     description: `Built an AI-powered analyzer for financial news using semantic search. 
 Implemented document chunking, vector embeddings, and FAISS similarity search. 
 Integrated with an LLM to answer queries contextually. 
 Simulates an equity research assistant for investors. 
 Designed for efficient retrieval of relevant financial information. 
 Provides actionable insights using AI techniques.`,
-    image: '/assets/stock.jpg',
-    link: '#',
-    github: 'https://github.com/arun-248/Stock-Trend-Analyzer',
+    image: '/assets/project/project4.png',
+    link: 'https://rahmatez.vercel.app/',
+    github: 'https://github.com/rahmatez/rahmatez-portfolio',
+    techStack: [
+      techStacks.python,
+      techStacks.tensorflow,
+      techStacks.pytorch,
+      techStacks.jupyter,
+      techStacks.pandas
+    ],
+  },
+
+  {
+    title: 'Counter App',
+    description: `Built an AI-powered analyzer for financial news using semantic search. 
+Implemented document chunking, vector embeddings, and FAISS similarity search. 
+Integrated with an LLM to answer queries contextually. 
+Simulates an equity research assistant for investors. 
+Designed for efficient retrieval of relevant financial information. 
+Provides actionable insights using AI techniques.`,
+    image: '/assets/project/project5.png',
+    link: 'https://rahmatez.github.io/counter-app/',
+    github: 'https://github.com/rahmatez/counter-app',
+    techStack: [
+      techStacks.python,
+      techStacks.tensorflow,
+      techStacks.pytorch,
+      techStacks.jupyter,
+      techStacks.pandas
+    ],
+  },
+
+  {
+    title: 'Story App',
+    description: `Built an AI-powered analyzer for financial news using semantic search. 
+Implemented document chunking, vector embeddings, and FAISS similarity search. 
+Integrated with an LLM to answer queries contextually. 
+Simulates an equity research assistant for investors. 
+Designed for efficient retrieval of relevant financial information. 
+Provides actionable insights using AI techniques.`,
+    image: '/assets/project/project6.png',
+    link: 'https://story-app-dicoding-1313c.web.app/',
+    github: 'https://github.com/rahmatez/story-app-starter-project',
     techStack: [
       techStacks.python,
       techStacks.tensorflow,
