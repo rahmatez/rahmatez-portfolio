@@ -23,7 +23,7 @@ export function CertificationCard({
       <img
         src={image}
         alt={title}
-        className="w-full h-64 object-cover"
+        // className="w-full h-64 object-cover"
       />
 
       {/* Hover overlay */}
