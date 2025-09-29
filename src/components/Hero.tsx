@@ -4,6 +4,7 @@ import { TypeWriter } from './ui/TypeWriter';
 import { SocialLinks } from './hero/SocialLinks';
 import { ContactInfo } from './hero/ContactInfo';
 import { ActionButtons } from './hero/ActionButtons';
+import { StructuredData, structuredDataConfigs } from './StructuredData';
 
 export function Hero() {
   const roles = [
@@ -14,10 +15,12 @@ export function Hero() {
   ];
 
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-    >
+    <>
+      <StructuredData data={structuredDataConfigs.person} id="person-data" />
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      >
       {/* Animated background with particles */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-black dark:via-gray-950/60 dark:to-slate-950/60">
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.08] dark:opacity-[0.08]" />
@@ -78,5 +81,6 @@ export function Hero() {
         </div>
       </div>
     </section>
+    </>
   );
 }

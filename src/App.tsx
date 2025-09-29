@@ -10,10 +10,12 @@ import { CustomCursor } from "./components/ui/CustomCursor";
 import { ScrollToTop } from "./components/ui/ScrollToTop";
 import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { SEOManager } from './components/SEOManager';
 
 function AppContent() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
+      <SEOManager />
       <CustomCursor />
       <Navbar />
       <Routes>

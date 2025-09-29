@@ -1,2 +1,32 @@
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://www.rahmatez.me/sitemap.xml
+
+# Specific crawling rules for better SEO
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Allow all search engines to access images
+User-agent: *
+Allow: /assets/
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
+Allow: *.pdf
+
+# Disallow unnecessary files
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /src/
+Disallow: /*.map$

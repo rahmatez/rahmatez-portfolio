@@ -1,0 +1,17 @@
+# Redirect trailing slashes
+/*/ /:splat 301
+
+# Handle client-side routing
+/* /index.html 200
+
+# Redirect common variations
+/portfolio /projects 301
+/work /projects 301
+/cv /resume 301
+/hire /contact 301
+/hire-me /contact 301
+
+# Force HTTPS and canonical domain
+http://rahmatez.me/* https://www.rahmatez.me/:splat 301!
+https://rahmatez.me/* https://www.rahmatez.me/:splat 301!
+http://www.rahmatez.me/* https://www.rahmatez.me/:splat 301!

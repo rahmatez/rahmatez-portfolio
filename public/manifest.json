@@ -1,0 +1,53 @@
+{
+  "name": "Rahmat Ashari - Full Stack Developer Portfolio",
+  "short_name": "Rahmat Ashari",
+  "description": "Professional Full Stack Developer specializing in Laravel, React.js, Node.js, and modern web technologies. View portfolio, projects, and professional experience.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/assets/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/favicon-32x32.png", 
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/rahmatez.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/rahmatez.png",
+      "sizes": "512x512", 
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "education", "productivity"],
+  "keywords": [
+    "Rahmat Ashari",
+    "Full Stack Developer", 
+    "Laravel Developer",
+    "React Developer",
+    "Node.js Developer",
+    "Web Development",
+    "Portfolio",
+    "Frontend",
+    "Backend",
+    "JavaScript",
+    "TypeScript",
+    "PHP"
+  ]
+}
