@@ -10,7 +10,7 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = "Rahmat Ashari - Expert Full Stack Developer | Laravel, React.js, Node.js Portfolio",
+  title = "Rahmat Ashari - Portfolio",
   description = "Professional Full Stack Developer specializing in Laravel, React.js, Node.js, and modern web technologies. View my portfolio with 20+ projects, certifications from AWS, Google Cloud, and comprehensive development experience.",
   keywords = "Rahmat Ashari, Full Stack Developer, Frontend Developer, Backend Developer, Laravel Expert, React.js Developer, Node.js Developer, JavaScript Expert, TypeScript Developer, Web Development, Portfolio",
   image = "https://www.rahmatez.me/assets/rahmatez.png",
@@ -73,7 +73,7 @@ export function SEO({
 // Pre-defined SEO configurations for different pages
 export const seoConfigs = {
   home: {
-    title: "Rahmat Ashari - Expert Full Stack Developer | Laravel, React.js, Node.js Portfolio",
+    title: "Rahmat Ashari - Portfolio",
     description: "Professional Full Stack Developer with 3+ years experience. Specialized in Laravel, React.js, Node.js. 20+ completed projects, AWS & Google Cloud certified. Available for freelance and full-time opportunities.",
     keywords: "Rahmat Ashari, Full Stack Developer, Laravel Developer, React Developer, Node.js Expert, JavaScript Developer, PHP Developer, Web Development Services, Portfolio, Freelancer",
     url: "https://www.rahmatez.me/"
