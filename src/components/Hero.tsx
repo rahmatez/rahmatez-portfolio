@@ -53,10 +53,10 @@ export function Hero() {
           {/* Right Column - Profile Image + Responsive Balloons */}
           <div className="relative order-1 md:order-2">
             {/* Responsive floating balloons */}
-            <div className="absolute w-6 sm:w-10 md:w-24 h-6 sm:h-10 md:h-24 bg-blue-600 top-0 left-0 rounded-full animate-floating" />
+            {/* <div className="absolute w-6 sm:w-10 md:w-24 h-6 sm:h-10 md:h-24 bg-blue-600 top-0 left-0 rounded-full animate-floating" />
             <div className="absolute w-6 sm:w-10 md:w-24 h-6 sm:h-10 md:h-24 bg-purple-600 bottom-0 right-0 rounded-full animate-floating delay-150" />
             <div className="absolute w-5 sm:w-8 md:w-20 h-5 sm:h-8 md:h-20 bg-green-500 top-4 right-4 rounded-full animate-floating delay-300" />
-            <div className="absolute w-5 sm:w-8 md:w-20 h-5 sm:h-8 md:h-20 bg-yellow-500 bottom-4 left-4 rounded-full animate-floating delay-450" />
+            <div className="absolute w-5 sm:w-8 md:w-20 h-5 sm:h-8 md:h-20 bg-yellow-500 bottom-4 left-4 rounded-full animate-floating delay-450" /> */}
 
             {/* Profile image */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl animate-pulse" />

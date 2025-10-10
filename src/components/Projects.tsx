@@ -26,7 +26,12 @@ import {
   SiMysql,
   SiBootstrap,
   SiJquery,
-  SiTailwindcss
+  SiTailwindcss,
+  SiVite,
+  SiNextdotjs,
+  SiTypescript,
+  SiPrisma,
+  SiSupabase
 } from 'react-icons/si';
 import { FaChartBar, FaProjectDiagram } from 'react-icons/fa';
 
@@ -59,6 +64,12 @@ const techStacks = {
   bootstrap: { icon: SiBootstrap, name: 'Bootstrap', color: '#7952B3' },
   jquery: { icon: SiJquery, name: 'jQuery', color: '#0769AD' },
   tailwind : { icon: SiTailwindcss, name: 'Tailwind CSS', color: '#38B2AC' }, // Using CSS icon for Tailwind
+  typescript: { icon: SiTypescript, name: 'TypeScript', color: '#3178C6' },
+  next : { icon: SiNextdotjs, name: 'Next.js', color: '#000000' },
+  vite : { icon: SiVite, name: 'Vite', color: '#646CFF' },
+  prisma : { icon: SiPrisma, name: 'Prisma', color: '#0C344B' },
+  postgres : { icon: SiPostgresql, name: 'PostgreSQL', color: '#336791' },
+  supabase : { icon: SiSupabase, name: 'Supabase', color: '#3ECF8E' }, // Using PostgreSQL icon for Supabase
 };
 
 // Define projects
@@ -121,64 +132,64 @@ const projects = [
   },
 
   {
-    title: 'Rahmatez-Portfolio',
-    description: `Built an AI-powered analyzer for financial news using semantic search. 
-Implemented document chunking, vector embeddings, and FAISS similarity search. 
-Integrated with an LLM to answer queries contextually. 
-Simulates an equity research assistant for investors. 
-Designed for efficient retrieval of relevant financial information. 
-Provides actionable insights using AI techniques.`,
+    title: 'rahmatez-portfolio',
+    description: `Project rahmatez-portfolio is a modern portfolio website
+    that I developed using React, TypeScript, and TailwindCSS. This website
+    is fully responsive and designed to showcase my professional skills, various
+    projects, certifications, and my experience as a Frontend & Backend Developer.
+    This project provides an attractive appearance as well as optimal performance to
+    strengthen my personal branding in the digital world.`,
     image: '/assets/project/project4.png',
     link: 'https://rahmatez.vercel.app/',
     github: 'https://github.com/rahmatez/rahmatez-portfolio',
     techStack: [
-      techStacks.python,
-      techStacks.tensorflow,
-      techStacks.pytorch,
-      techStacks.jupyter,
-      techStacks.pandas
+      techStacks.typescript,
+      techStacks.react,
+      techStacks.vite,
+      techStacks.tailwind,
     ],
   },
 
-  {
-    title: 'Counter App',
-    description: `Built an AI-powered analyzer for financial news using semantic search. 
-Implemented document chunking, vector embeddings, and FAISS similarity search. 
-Integrated with an LLM to answer queries contextually. 
-Simulates an equity research assistant for investors. 
-Designed for efficient retrieval of relevant financial information. 
-Provides actionable insights using AI techniques.`,
+   {
+    title: 'Stock Management',
+    description: `Project Stock Management is a GitHub-based application that I developed
+    to efficiently monitor, manage, and analyze stock inventory. This application is designed
+    with a focus on ease of use, real-time data integration, and stock analysis visualization.
+    Supported by modern technology and GitHub repository management, this project provides a
+    digital solution that helps users track inventory and make business decisions more accurately.`,
     image: '/assets/project/project5.png',
-    link: 'https://rahmatez.github.io/counter-app/',
-    github: 'https://github.com/rahmatez/counter-app',
-    techStack: [
-      techStacks.python,
-      techStacks.tensorflow,
-      techStacks.pytorch,
-      techStacks.jupyter,
-      techStacks.pandas
-    ],
-  },
-
-  {
-    title: 'Story App',
-    description: `Built an AI-powered analyzer for financial news using semantic search. 
-Implemented document chunking, vector embeddings, and FAISS similarity search. 
-Integrated with an LLM to answer queries contextually. 
-Simulates an equity research assistant for investors. 
-Designed for efficient retrieval of relevant financial information. 
-Provides actionable insights using AI techniques.`,
-    image: '/assets/project/project6.png',
     link: 'https://story-app-dicoding-1313c.web.app/',
     github: 'https://github.com/rahmatez/story-app-starter-project',
     techStack: [
-      techStacks.python,
-      techStacks.tensorflow,
-      techStacks.pytorch,
-      techStacks.jupyter,
-      techStacks.pandas
+      techStacks.typescript,
+      techStacks.react,
+      techStacks.next,
+      techStacks.prisma,
+      techStacks.postgres, 
+      techStacks.tailwind
     ],
   },
+
+  {
+    title: 'Crypto Tracker',
+    description: `Project crypto-tracker is a production-ready cryptocurrency
+    dashboard developed using Next.js, TypeScript, and Tailwind CSS.
+    The dashboard displays live cryptocurrency market prices, a list of
+    top movers, a persistent watchlist, detailed coin analytics, and a USD/IDR
+    currency switcher. With modern technologies and CoinGecko data integration, 
+    this project provides a comprehensive solution for real-time monitoring and
+    analysis of crypto assets.`,
+    image: '/assets/project/project6.png',
+    link: 'https://crypto-tracker-chi-pearl.vercel.app/',
+    github: 'https://github.com/rahmatez/crypto-tracker',
+    techStack: [
+      techStacks.typescript,
+      techStacks.react,
+      techStacks.next,
+      techStacks.tailwind,
+    ],
+  },
+
   
 ];
 
