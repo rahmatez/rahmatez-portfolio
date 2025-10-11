@@ -14,7 +14,7 @@ const links = [
     label: 'LinkedIn',
   },
   {
-    href: 'https://www.instagram.com/rahmtez_/',
+    href: 'https://www.instagram.com/rahmatez_/',
     icon: <Instagram className="w-6 h-6 text-[#E1306C]" />,
     label: 'Instagram',
   },
@@ -24,7 +24,7 @@ const links = [
     label: 'WhatsApp',
   },
   {
-    href: 'https://x.com/rahmtez_',
+    href: 'https://x.com/rahmatez_',
     icon: <FaXTwitter className="w-6 h-6 text-gray-900 dark:text-white" />,
     label: 'Twitter',
   },
