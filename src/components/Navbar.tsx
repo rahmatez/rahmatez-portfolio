@@ -21,13 +21,13 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full bg-white/70 dark:bg-black/70 backdrop-blur-md z-50 border-b border-gray-200/20 dark:border-gray-700/20">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-        {/* Logo (Stylized "A") */}
-        <Link to="/" className="flex items-center">
-          <div className="w-10 h-10 flex items-center justify-center rounded-full 
-            bg-gradient-to-r from-blue-400 to-purple-500 
-            text-white font-extrabold text-2xl shadow-lg">
-            R
-          </div>
+        {/* Logo */}
+        <Link to="/" className="flex items-center" aria-label="Home">
+          <img
+            src="/assets/navbar-logo.png"
+            alt="Rahmat Ashari"
+            className="h-10 w-10 object-contain"
+          />
         </Link>
 
         {/* Desktop Menu */}
