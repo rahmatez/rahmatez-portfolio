@@ -19,10 +19,10 @@ export function Hero() {
       <StructuredData data={structuredDataConfigs.person} id="person-data" />
       <section
         id="home"
-        className="min-h-screen flex items-center justify-center relative overflow-hidden"
+        className="min-h-screen flex items-center justify-center relative"
       >
       {/* Animated background with particles */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-black dark:via-gray-950/60 dark:to-slate-950/60">
+      <div className="absolute inset-0 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-black dark:via-gray-950/60 dark:to-slate-950/60">
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.08] dark:opacity-[0.08]" />
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400/20 dark:bg-blue-600/30 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-400/20 dark:bg-purple-600/30 rounded-full blur-3xl animate-pulse delay-1000" />
@@ -37,7 +37,7 @@ export function Hero() {
               <div className="inline-block bg-blue-100 dark:bg-blue-900/50 backdrop-blur-sm text-blue-700 dark:text-blue-300 text-sm font-medium px-4 py-2 rounded-full border border-blue-200 dark:border-blue-800">
                 Hey! <span className="inline-block origin-[70%_70%] animate-wave">👋</span> I'm
               </div>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent animate-gradient">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-800 dark:text-slate-100">
                 Rahmat Ashari
               </h1>
               <div className="text-xl sm:text-2xl md:text-2xl text-gray-700 dark:text-gray-300">

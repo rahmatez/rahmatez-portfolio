@@ -4,14 +4,12 @@ interface TypeWriterProps {
   words: string[];
   delay?: number;
   infinite?: boolean;
-  gradient?: boolean;
 }
 
 export function TypeWriter({
   words,
   delay = 100,
   infinite = true,
-  gradient = true,
 }: TypeWriterProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState("|"); // Start with the cursor
@@ -46,13 +44,7 @@ export function TypeWriter({
   }, [currentText, isDeleting, currentWordIndex, words, delay, infinite]);
 
   return (
-    <span
-      className={`relative font-semibold ${
-        gradient
-          ? "bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"
-          : "text-blue-600 dark:text-blue-400"
-      }`}
-    >
+    <span className="relative font-semibold text-slate-600 dark:text-slate-300">
       <span className="whitespace-nowrap">{currentText}</span>
     </span>
   );

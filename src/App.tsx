@@ -6,7 +6,6 @@ import { ProjectsPage } from './pages/Projects';
 import { CertificationsPage } from './pages/Certifications';
 import { ResumePage } from './pages/Resume';
 import { ContactPage } from './pages/Contact';
-import { CustomCursor } from "./components/ui/CustomCursor";
 import { ScrollToTop } from "./components/ui/ScrollToTop";
 import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -16,7 +15,6 @@ function AppContent() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
       <SEOManager />
-      <CustomCursor />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

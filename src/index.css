@@ -11,11 +11,16 @@
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+    overflow-x: clip;
   }
 
   body {
     @apply antialiased;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
   }
 
   /* Reduce motion if user prefers it */
@@ -82,14 +87,6 @@
 
 .animate-floating {
   @apply motion-safe:animate-[floating_4s_ease-in-out_infinite];
-}
-
-/* Optimize mobile performance */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
-  overscroll-behavior-y: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 /* PDF Mobile Optimization */
