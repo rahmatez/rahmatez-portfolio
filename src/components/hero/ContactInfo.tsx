@@ -37,7 +37,7 @@ export function ContactInfo() {
       />
       <ContactItem
         icon={<MapPin className="w-5 h-5" />}
-        text="Tegal, Central Java, Indonesia"
+        text="Jakarta Timur, Indonesia"
       />
     </div>
   );
