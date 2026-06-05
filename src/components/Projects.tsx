@@ -77,6 +77,57 @@ const projects = [
   {
     title: 'e-Ticketing System Brigata Curva Sud',
     description: `As a full-stack developer for the Brigata Curva Sud e-Ticketing System. This web-based application was developed using Laravel 10
+    to facilitates online match ticket booking for BCS supporters. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.`,
+    image: '/assets/project/project1.png',
+    link: 'https://github.com/rahmatez/',
+    github: 'https://github.com/rahmatez/',
+    techStack: [
+      techStacks.php,
+      techStacks.laravel,
+      techStacks.mysql,
+      techStacks.bootstrap,
+      techStacks.js,
+      techStacks.css
+    ],
+  },
+
+  {
+    title: '115-roots CMS',
+    description: `115-roots is a comprehensive Laravel-based content management system and landing page specifically built for the PSS Sleman supporter community,
+    designed to efficiently manage and publish public content including blog articles, photo galleries, event information, and an integrated online shop, all through an intuitive and modern administrative dashboard interface.`,
+    image: '/assets/project/project7.png',
+    link: 'https://github.com/rahmatez/',
+    github: 'https://github.com/rahmatez/115-roots',
+    techStack: [
+      techStacks.php,
+      techStacks.laravel,
+      techStacks.mysql,
+      techStacks.tailwind,
+      techStacks.js,
+      techStacks.css
+    ],
+  },
+
+  {
+    title: 'Mindaka Village Portal',
+    description: `Mindaka Village Portal is a web application that serves as a village profile website and administrative dashboard for managing public content, including news, gallery, village budget, geography, government information, social media profiles, MSME products, and complaint management system. The project is built primarily with TypeScript, CSS, and other supporting technologies.`,
+    image: '/assets/project/project8.png',
+    link: 'https://github.com/rahmatez/',
+    github: 'https://github.com/rahmatez/village-portal-nextjs',
+    techStack: [
+      techStacks.next,
+      techStacks.react,
+      techStacks.typescript,
+      techStacks.node,
+      techStacks.express,
+      techStacks.postgresql
+    ],
+  },
+
+  {
+    title: 'e-Ticketing System Brigata Curva Sud',
+    description: `As a full-stack developer for the Brigata Curva Sud e-Ticketing System. This web-based application was developed using Laravel 10
     to facilitates online match ticket booking for BCS supporters. The application is integrated with Midtrans for secure payments, 
     generates tickets with unique QR codes for validation, and features match management, sales reporting, notifications, and contact support.`,
     image: '/assets/project/project1.png',
