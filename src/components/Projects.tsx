@@ -75,20 +75,18 @@ const techStacks = {
 // Define projects
 const projects = [
   {
-    title: 'e-Ticketing System Brigata Curva Sud',
-    description: `As a full-stack developer for the Brigata Curva Sud e-Ticketing System. This web-based application was developed using Laravel 10
-    to facilitates online match ticket booking for BCS supporters. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.`,
-    image: '/assets/project/project1.png',
+    title: 'Indonesian Tour Travel',
+    description: `Indonesian Tour Travel is a web application that serves as a tour travel website and administrative dashboard for managing public content, including news, gallery, village budget, geography, government information, social media profiles, MSME products, and complaint management system. The project is built primarily with TypeScript, Next.js, and other supporting technologies.`,
+    image: '/assets/project/project9.png',
     link: 'https://github.com/rahmatez/',
     github: 'https://github.com/rahmatez/',
     techStack: [
-      techStacks.php,
-      techStacks.laravel,
-      techStacks.mysql,
-      techStacks.bootstrap,
-      techStacks.js,
-      techStacks.css
+      techStacks.next,
+      techStacks.react,
+      techStacks.typescript,
+      techStacks.node,
+      techStacks.express,
+      techStacks.postgresql
     ],
   },
 
