@@ -9,7 +9,7 @@ const links = [
     label: 'GitHub',
   },
   {
-    href: 'https://id.linkedin.com/in/rahmat-ashari',
+    href: 'https://www.linkedin.com/in/rahmat-ashari',
     icon: <Linkedin className="w-6 h-6 text-[#0077B5]" />,
     label: 'LinkedIn',
   },

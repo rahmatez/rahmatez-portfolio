@@ -52,7 +52,7 @@ export function Contact() {
                 </a>
                 
                 <a
-                  href="https://id.linkedin.com/in/rahmat-ashari"
+                  href="https://www.linkedin.com/in/rahmat-ashari"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"

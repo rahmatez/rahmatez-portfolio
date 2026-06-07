@@ -286,7 +286,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Rahmat Ashari**
 - 📧 Email: [rahmatez@example.com](mailto:rahmatez@example.com)
-- 💼 LinkedIn: [linkedin.com/in/rahmat-ashari](https://linkedin.com/in/rahmat-ashari)
+- 💼 LinkedIn: [linkedin.com/in/rahmat-ashari](https://www.linkedin.com/in/rahmat-ashari)
 - 🐱 GitHub: [github.com/rahmatez](https://github.com/rahmatez)
 - 🌐 Website: [https://rahmatez.vercel.app](https://rahmatez.vercel.app)
 

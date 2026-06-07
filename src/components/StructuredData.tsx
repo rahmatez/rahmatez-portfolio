@@ -44,7 +44,7 @@ export const structuredDataConfigs = {
       "url": "https://rahmatez.me",
       "sameAs": [
         "https://github.com/rahmatez",
-        "https://linkedin.com/in/rahmatez"
+        "https://www.linkedin.com/in/rahmat-ashari"
       ]
     },
     "description": "Professional portfolio showcasing full stack development projects and expertise",
@@ -82,7 +82,7 @@ export const structuredDataConfigs = {
     "image": "https://www.rahmatez.me/assets/rahmatez.png",
     "sameAs": [
       "https://github.com/rahmatez",
-      "https://linkedin.com/in/rahmatez"
+      "https://www.linkedin.com/in/rahmat-ashari"
     ],
     "knowsAbout": [
       "Laravel",
