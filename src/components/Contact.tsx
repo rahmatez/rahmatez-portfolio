@@ -1,6 +1,7 @@
 import { SectionTitle } from './ui/SectionTitle';
 import { SectionBackground } from './ui/SectionBackground';
 import { ContactForm } from './ui/ContactForm';
+import { AnimateIn } from './ui/AnimateIn';
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 
 export function Contact() {
@@ -13,7 +14,8 @@ export function Contact() {
           </SectionTitle>
 
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
-            <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+            <AnimateIn delay={100}>
+            <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 h-full transition-transform duration-300 hover:-translate-y-1">
               <h3 className="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-100">
                 Lets Connect
               </h3>
@@ -65,10 +67,13 @@ export function Contact() {
                 </div>
               </div>
             </div>
+            </AnimateIn>
 
-            <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+            <AnimateIn delay={200}>
+            <div className="bg-white dark:bg-gray-900 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 h-full transition-transform duration-300 hover:-translate-y-1">
               <ContactForm />
             </div>
+            </AnimateIn>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { SectionTitle } from "./ui/SectionTitle";
 import { SectionBackground } from "./ui/SectionBackground";
 import { SkillCard } from "./ui/SkillCard";
+import { AnimateIn } from "./ui/AnimateIn";
 import { 
   SiJavascript, 
   SiPhp, 
@@ -96,14 +97,15 @@ export function Skills() {
           </SectionTitle>
 
           <div className="max-w-7xl mx-auto grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-4 sm:gap-6">
-            {skills.map((tech) => (
-              <SkillCard 
-                key={tech.name} 
-                name={tech.name} 
-                icon={tech.icon} 
-                color={tech.color} 
-                url={tech.url} 
-              />
+            {skills.map((tech, index) => (
+              <AnimateIn key={tech.name} delay={(index % 7) * 60}>
+                <SkillCard
+                  name={tech.name}
+                  icon={tech.icon}
+                  color={tech.color}
+                  url={tech.url}
+                />
+              </AnimateIn>
             ))}
           </div>
         </div>

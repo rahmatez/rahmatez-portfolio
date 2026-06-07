@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
@@ -9,15 +8,15 @@ export default defineConfig({
   },
   assetsInclude: ['**/*.pdf'],
   worker: {
-    format: 'es'
+    format: 'es',
   },
   build: {
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
+          vendor: ['react', 'react-dom', 'react-router-dom'],
           icons: ['lucide-react', 'react-icons'],
-          ui: ['framer-motion'],
+          pdf: ['react-pdf', 'pdfjs-dist'],
         },
       },
     },
@@ -27,11 +26,6 @@ export default defineConfig({
         drop_console: true,
         drop_debugger: true,
       },
-    },
-  },
-  server: {
-    headers: {
-      'Cache-Control': 'public, max-age=31536000',
     },
   },
 });

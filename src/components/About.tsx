@@ -2,6 +2,7 @@ import { User2, Code2, Lightbulb } from "lucide-react";
 import { GoGoal } from "react-icons/go";
 import { SectionTitle } from "./ui/SectionTitle";
 import { SectionBackground } from "./ui/SectionBackground";
+import { AnimateIn } from "./ui/AnimateIn";
 
 const aboutSections = [
   {
@@ -54,7 +55,8 @@ export function About() {
           <SectionTitle subtitle="Building modern web applications with expertise in Frontend & Backend Development.">About Me</SectionTitle>
 
           {/* Introduction */}
-          <div className="max-w-5xl mx-auto mb-10 text-center">
+          <AnimateIn delay={100}>
+            <div className="max-w-5xl mx-auto mb-10 text-center">
             <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               Hey there! 👋 I'm <span className="text-blue-600 font-semibold">Rahmat Ashari</span>, 
               an Informatics Engineering graduate with a GPA of 3.63, specializing in Frontend & Backend Development. 
@@ -67,12 +69,13 @@ export function About() {
                 🚀 Turning ideas into exceptional web experiences
               </span>
             </div>
-          </div>
+            </div>
+          </AnimateIn>
 
-          {/* About Section Cards */}
           <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-            {aboutSections.map(({ icon: Icon, title, description, color }) => (
-              <div key={title} className="relative group">
+            {aboutSections.map(({ icon: Icon, title, description, color }, index) => (
+              <AnimateIn key={title} delay={index * 100}>
+              <div className="relative group h-full">
                 {/* Background Effect */}
                 <div className={`absolute inset-0 ${color} rounded-xl blur-xl opacity-20 group-hover:opacity-60 transition-opacity duration-300 pointer-events-none`} />
 
@@ -92,6 +95,7 @@ export function About() {
                   </ul>
                 </div>
               </div>
+              </AnimateIn>
             ))}
           </div>
         </div>

@@ -2,6 +2,7 @@
 import { SectionTitle } from "./ui/SectionTitle";
 import { SectionBackground } from "./ui/SectionBackground";
 import { CertificationCard } from "./ui/CertificationCard";
+import { AnimateIn } from "./ui/AnimateIn";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -302,10 +303,14 @@ export function Certifications() {
           </Slider> */}
 
           {/* Dicoding */}
+          <AnimateIn delay={80}>
           <h3 className="text-2xl font-bold text-cyan-500 mb-6">Dicoding Certifications</h3>
+          </AnimateIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {groups.dicoding.map((cert) => (
-              <CertificationCard key={cert.title} {...cert} />
+            {groups.dicoding.map((cert, index) => (
+              <AnimateIn key={cert.title} delay={(index % 3) * 100}>
+                <CertificationCard {...cert} />
+              </AnimateIn>
             ))}
           </div>
         </div>

@@ -3,13 +3,12 @@ import { Footer } from '../components/Footer';
 
 export function Home() {
   return (
-    <main 
+    <div
       className="min-h-screen bg-gray-50 dark:bg-gray-900"
-      role="main"
       aria-label="Rahmat Ashari Portfolio Homepage"
     >
       <Hero />
       <Footer />
-    </main>
+    </div>
   );
 }

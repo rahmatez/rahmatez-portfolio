@@ -2,13 +2,28 @@ import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { SEO, seoConfigs } from './SEO';
 import { StructuredData, structuredDataConfigs } from './StructuredData';
+import { getProjectBySlug } from '../data/projects';
+
+const SITE_URL = 'https://www.rahmatez.me';
 
 export function SEOManager() {
   const location = useLocation();
-  
+
   const getSEOConfig = () => {
     const path = location.pathname;
-    
+
+    if (path.startsWith('/projects/')) {
+      const slug = path.split('/')[2];
+      const project = slug ? getProjectBySlug(slug) : undefined;
+      if (project) {
+        return {
+          title: `${project.title} - Rahmat Ashari`,
+          description: project.description,
+          url: `${SITE_URL}/projects/${project.slug}`,
+        };
+      }
+    }
+
     switch (path) {
       case '/':
         return seoConfigs.home;
@@ -22,14 +37,20 @@ export function SEOManager() {
         return seoConfigs.contact;
       case '/resume':
         return seoConfigs.resume;
+      case '/404':
+        return {
+          title: '404 - Page Not Found | Rahmat Ashari',
+          description: 'The page you are looking for could not be found.',
+          url: `${SITE_URL}/404`,
+        };
       default:
         return seoConfigs.home;
     }
   };
-  
+
   const getStructuredData = () => {
     const path = location.pathname;
-    
+
     switch (path) {
       case '/':
         return structuredDataConfigs.person;
@@ -42,32 +63,40 @@ export function SEOManager() {
 
   const getBreadcrumbData = () => {
     const path = location.pathname;
-    const breadcrumbs = [
-      { name: 'Home', url: 'https://www.rahmatez.me/' }
-    ];
-    
-    if (path !== '/') {
-      const pageName = path.substring(1).charAt(0).toUpperCase() + path.substring(2);
+    const breadcrumbs = [{ name: 'Home', url: `${SITE_URL}/` }];
+
+    if (path.startsWith('/projects/')) {
+      const slug = path.split('/')[2];
+      const project = slug ? getProjectBySlug(slug) : undefined;
+      breadcrumbs.push({ name: 'Projects', url: `${SITE_URL}/projects` });
+      if (project) {
+        breadcrumbs.push({
+          name: project.title,
+          url: `${SITE_URL}/projects/${project.slug}`,
+        });
+      }
+    } else if (path !== '/') {
+      const segment = path.replace(/^\//, '');
+      const pageName = segment.charAt(0).toUpperCase() + segment.slice(1);
       breadcrumbs.push({
         name: pageName,
-        url: `https://www.rahmatez.me${path}`
+        url: `${SITE_URL}${path}`,
       });
     }
-    
+
     return structuredDataConfigs.breadcrumb(breadcrumbs);
   };
 
   useEffect(() => {
-    // Send page view to analytics (if Google Analytics is configured)
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('config', 'GA_MEASUREMENT_ID', {
+    if (typeof window !== 'undefined' && (window as Window & { gtag?: (...args: unknown[]) => void }).gtag) {
+      (window as Window & { gtag: (...args: unknown[]) => void }).gtag('config', 'GA_MEASUREMENT_ID', {
         page_path: location.pathname,
       });
     }
   }, [location]);
 
   const seoConfig = getSEOConfig();
-  
+
   return (
     <>
       <SEO {...seoConfig} />

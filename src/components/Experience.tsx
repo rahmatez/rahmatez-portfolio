@@ -1,6 +1,7 @@
 import { SectionTitle } from "./ui/SectionTitle";
 import { SectionBackground } from "./ui/SectionBackground";
 import { ExperienceCard } from "./ui/ExperienceCard";
+import { AnimateIn } from "./ui/AnimateIn";
 
 const experiences = [
   {
@@ -60,7 +61,9 @@ export function Experience() {
 
           <div className="relative border-l-2 border-blue-600 dark:border-blue-500 max-w-5xl mx-auto space-y-10">
             {experiences.map((exp, index) => (
-              <ExperienceCard key={index} {...exp} />
+              <AnimateIn key={index} delay={index * 150}>
+                <ExperienceCard {...exp} />
+              </AnimateIn>
             ))}
           </div>
         </div>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Footer } from '../components/Footer';
 import { SectionTitle } from '../components/ui/SectionTitle';
 import { SectionBackground } from '../components/ui/SectionBackground';
+import { AnimateIn } from '../components/ui/AnimateIn';
 import { Document, Page, pdfjs } from "react-pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 
@@ -52,6 +53,7 @@ export function ResumePage() {
               </SectionTitle>
 
               {/* Download Button */}
+              <AnimateIn delay={100}>
               <div className="flex justify-center mb-6 sm:mb-8">
                 <a
                   href={pdfFile}
@@ -62,8 +64,9 @@ export function ResumePage() {
                   Download CV
                 </a>
               </div>
+              </AnimateIn>
 
-              {/* PDF Viewer */}
+              <AnimateIn delay={200}>
               <div>
                 <Document
                   file={pdfFile}
@@ -164,6 +167,7 @@ export function ResumePage() {
                   Download CV
                 </a>
               </div>
+              </AnimateIn>
             </div>
           </section>
         </SectionBackground>

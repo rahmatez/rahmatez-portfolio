@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import GitHubCalendar from "react-github-calendar";
 import { SectionTitle } from "./ui/SectionTitle";
 import { SectionBackground } from "./ui/SectionBackground";
+import { AnimateIn } from "./ui/AnimateIn";
 import { Github } from "lucide-react";
 // import { SiLeetcode } from "react-icons/si";
 // import { FaHackerrank } from "react-icons/fa";
@@ -172,12 +173,14 @@ export function Highlights() {
           </div> */}
 
           {/* ================= GitHub Section ================= */}
+          <AnimateIn delay={80}>
           <div>
             <h3 className="text-2xl font-semibold flex items-center gap-2 mb-8">
               <Github size={28} className="text-cyan-500" /> GitHub
               Contributions
             </h3>
 
+            <AnimateIn delay={150}>
             <div className="mb-10 flex flex-col items-center">
               <div className="w-full p-6 border border-gray-300 dark:border-gray-600 rounded-lg shadow-lg">
                 <GitHubCalendar
@@ -197,37 +200,11 @@ export function Highlights() {
                 />
               </div>
             </div>
+            </AnimateIn>
 
-            {/* Top Repositories */}
-            {/* <div className="mx-auto max-w-6xl grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-8">
-              {repos.map((repo) => (
-                <a
-                  key={repo.name}
-                  href={repo.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block p-6 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg shadow hover:shadow-lg transition-transform duration-300 transform hover:scale-105"
-                >
-                  <h4 className="text-xl font-semibold text-blue-600 dark:text-blue-400">
-                    {repo.name}
-                  </h4>
-                  <p className="text-gray-600 dark:text-gray-300 line-clamp-3">
-                    {repo.description}
-                  </p>
-                  <div className="mt-4 flex items-center justify-between text-gray-500">
-                    <span>{repo.language}</span>
-                    <div className="flex space-x-4">
-                      <span>⭐ {repo.stars}</span>
-                      <span>🍴 {repo.forks}</span>
-                    </div>
-                  </div>
-                </a>
-              ))}
-            </div> */}
-
-            {/* GitHub Profile */}
             {user && (
-              <div className="flex flex-col md:flex-row items-center justify-between bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg p-6 shadow-lg">
+              <AnimateIn delay={250}>
+              <div className="flex flex-col md:flex-row items-center justify-between bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg p-6 shadow-lg transition-transform duration-300 hover:-translate-y-1">
                 <div className="flex items-center space-x-4">
                   <img
                     src={user.avatar_url}
@@ -266,8 +243,10 @@ export function Highlights() {
                   </a>
                 </div>
               </div>
+              </AnimateIn>
             )}
           </div>
+          </AnimateIn>
         </div>
       </section>
     </SectionBackground>

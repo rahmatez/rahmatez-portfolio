@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 /* Optimize animations and transitions */
 @layer base {
   html {
-    scroll-behavior: smooth;
+    font-size: 93.75%; /* 15px base — slightly smaller typography & spacing site-wide */
     -webkit-tap-highlight-color: transparent;
     overflow-x: clip;
   }
@@ -17,10 +17,8 @@
   body {
     @apply antialiased;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden;
     width: 100%;
     min-height: 100%;
-    -webkit-overflow-scrolling: touch;
   }
 
   /* Reduce motion if user prefers it */
@@ -49,6 +47,28 @@
 
   .animate-wave {
     @apply motion-safe:animate-[wave_2s_ease-in-out_infinite];
+  }
+
+  .animate-page-enter {
+    @apply motion-safe:animate-[page-enter_0.5s_cubic-bezier(0.22,1,0.36,1)_forwards];
+  }
+}
+
+@keyframes nav-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -115,12 +135,39 @@
   height: auto !important;
 }
 
-/* Optimize images and transitions */
-img {
-  @apply transform-gpu;
+.animate-in {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-duration: var(--animate-duration, 650ms);
+  transition-delay: var(--animate-delay, 0ms);
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.transition-transform,
-.transition-all {
-  @apply transform-gpu;
+.animate-in[data-direction='up'] {
+  transform: translateY(2rem);
+}
+
+.animate-in[data-direction='down'] {
+  transform: translateY(-2rem);
+}
+
+.animate-in[data-direction='left'] {
+  transform: translateX(2rem);
+}
+
+.animate-in[data-direction='right'] {
+  transform: translateX(-2rem);
+}
+
+.animate-in[data-visible='true'] {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

@@ -1,310 +1,73 @@
-import { SectionTitle } from './ui/SectionTitle'; 
+import { useMemo, useState } from 'react';
+import { SectionTitle } from './ui/SectionTitle';
 import { SectionBackground } from './ui/SectionBackground';
 import { ProjectCard } from './ui/ProjectCard';
+import { AnimateIn } from './ui/AnimateIn';
 import {
-  SiPython,
-  SiStreamlit,
-  SiScikitlearn,
-  SiPandas,
-  SiNumpy,
-  SiJupyter,
-  SiGooglecolab,
-  SiTensorflow,
-  SiPytorch,
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
-  SiReact,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiPostgresql,
-  SiApachespark,
-  SiPhp,
-  SiLaravel,
-  SiCodeigniter,
-  SiMysql,
-  SiBootstrap,
-  SiJquery,
-  SiTailwindcss,
-  SiVite,
-  SiNextdotjs,
-  SiTypescript,
-  SiPrisma,
-  SiSupabase,
-  SiGo,
-  SiVercel,
-  SiDocker,
-} from 'react-icons/si';
-import { FaChartBar, FaProjectDiagram } from 'react-icons/fa';
+  projects,
+  projectCategories,
+  PROJECT_CATEGORY_LABELS,
+} from '../data/projects';
+import type { ProjectCategory } from '../types/project';
 
-// Define tech stack icons & colors
-const techStacks = {
-  python: { icon: SiPython, name: 'Python', color: '#3776AB' },
-  scikit: { icon: SiScikitlearn, name: 'Scikit-learn', color: '#F7931E' },
-  streamlit: { icon: SiStreamlit, name: 'Streamlit', color: '#FF4B4B' },
-  pandas: { icon: SiPandas, name: 'Pandas', color: '#150458' },
-  numpy: { icon: SiNumpy, name: 'NumPy', color: '#013243' },
-  seaborn: { icon: FaProjectDiagram, name: 'Seaborn', color: '#4C9A91' },
-  powerbi: { icon: FaChartBar, name: 'Power BI', color: '#F2C811' },
-  jupyter: { icon: SiJupyter, name: 'Jupyter Notebook', color: '#F37626' },
-  colab: { icon: SiGooglecolab, name: 'Google Colab', color: '#F9AB00' },
-  tensorflow: { icon: SiTensorflow, name: 'TensorFlow', color: '#FF6F00' },
-  pytorch: { icon: SiPytorch, name: 'PyTorch', color: '#EE4C2C' },
-  html: { icon: SiHtml5, name: 'HTML', color: '#E34F26' },
-  css: { icon: SiCss3, name: 'CSS', color: '#1572B6' },
-  js: { icon: SiJavascript, name: 'JavaScript', color: '#F7DF1E' },
-  react: { icon: SiReact, name: 'React.js', color: '#61DAFB' },
-  node: { icon: SiNodedotjs, name: 'Node.js', color: '#339933' },
-  express: { icon: SiExpress, name: 'Express.js', color: '#000000' },
-  mongodb: { icon: SiMongodb, name: 'MongoDB', color: '#47A248' },
-  postgresql: { icon: SiPostgresql, name: 'PostgreSQL', color: '#336791' },
-  spark: { icon: SiApachespark, name: 'Apache Spark', color: '#E25A1C' },
-  php: { icon: SiPhp, name: 'PHP', color: '#777BB4' },
-  laravel: { icon: SiLaravel, name: 'Laravel', color: '#FF2D20' },
-  codeigniter: { icon: SiCodeigniter, name: 'CodeIgniter', color: '#EF4223' },
-  mysql: { icon: SiMysql, name: 'MySQL', color: '#4479A1' },
-  bootstrap: { icon: SiBootstrap, name: 'Bootstrap', color: '#7952B3' },
-  jquery: { icon: SiJquery, name: 'jQuery', color: '#0769AD' },
-  tailwind : { icon: SiTailwindcss, name: 'Tailwind CSS', color: '#38B2AC' }, // Using CSS icon for Tailwind
-  typescript: { icon: SiTypescript, name: 'TypeScript', color: '#3178C6' },
-  next : { icon: SiNextdotjs, name: 'Next.js', color: '#000000' },
-  vite : { icon: SiVite, name: 'Vite', color: '#646CFF' },
-  prisma : { icon: SiPrisma, name: 'Prisma', color: '#0C344B' },
-  postgres : { icon: SiPostgresql, name: 'PostgreSQL', color: '#336791' },
-  supabase : { icon: SiSupabase, name: 'Supabase', color: '#3ECF8E' }, // Using PostgreSQL 
-  go : { icon: SiGo, name: 'Go', color: '#00ADD8' },
-  vercel : { icon: SiVercel, name: 'Vercel', color: '#000000' },
-  docker : { icon: SiDocker, name: 'Docker', color: '#2496ED' },
-};
-
-// Define projects
-const projects = [
-  {
-    title: 'World Cup 2026 Score',
-    description: `This is a World Cup 2026 website, built with Next.js 16, TypeScript, and Tailwind CSS 4. The application provides World Cup 2026 information, schedules, and live updates in Indonesian language, utilizing Indonesian time zones for better user experience. The codebase is primarily TypeScript-based, ensuring type safety and maintainability across the frontend application.`,
-    image: '/assets/project/project12.png',
-    link: 'https://worldcup-2026-rahmatez.vercel.app/',
-    github: 'https://github.com/rahmatez/worldcup2026-nextjs',
-    techStack: [
-      techStacks.next,
-      techStacks.typescript,
-      techStacks.tailwind,
-    ],
-  },
-
-  {
-    title: 'Makan Bang',
-    description: `This is a full-stack food ordering application called MakanBang, built with Next.js, PostgreSQL, Auth.js, and Midtrans Snap for payment processing. The application is primarily developed in TypeScript and features a complete backend and frontend integrated solution for restaurant food ordering, user authentication, and secure payment handling.`,
-    image: '/assets/project/project11.png',
-    link: 'https://github.com/rahmatez/makanbang-fullstack-nextjs',
-    github: 'https://makanbang-umber.vercel.app/',
-    techStack: [
-      techStacks.next,
-      techStacks.typescript,
-      techStacks.node,
-      techStacks.postgresql
-    ],
-  },
-
-  {
-    title: 'StockFlow-Go',
-    description: `This is StockFlow, an Inventory & Order Management System built with Go as a SaaS platform. The application provides a comprehensive dashboard to manage products, stock levels, orders, and generate business reports all from a single interface. It enables businesses to streamline their inventory operations and order tracking efficiently. Designed to help businesses optimize their supply chain and operational management.`,
-    image: '/assets/project/project10.png',
-    link: 'https://stock-flow-go.vercel.app/dashboard',
-    github: 'https://github.com/rahmatez/stockFlow-go',
-    techStack: [
-      techStacks.go,
-      techStacks.postgresql,
-      techStacks.node,
-      techStacks.docker,
-      techStacks.typescript,
-      techStacks.next,
-    ],
-  },
-
-  {
-    title: 'Indonesian Tour Travel',
-    description: `Indonesian Tour Travel is a web application that serves as a tour travel website and administrative dashboard for managing public content, including news, gallery, village budget, geography, government information, social media profiles, MSME products, and complaint management system. The project is built primarily with TypeScript, Next.js, and other supporting technologies.`,
-    image: '/assets/project/project9.png',
-    link: 'https://github.com/rahmatez/',
-    github: 'https://github.com/rahmatez/',
-    techStack: [
-      techStacks.next,
-      techStacks.react,
-      techStacks.typescript,
-      techStacks.node,
-      techStacks.express,
-      techStacks.postgresql
-    ],
-  },
-
-  {
-    title: '115-roots CMS',
-    description: `115-roots is a comprehensive Laravel-based content management system and landing page specifically built for the PSS Sleman supporter community,
-    designed to efficiently manage and publish public content including blog articles, photo galleries, event information, and an integrated online shop, all through an intuitive and modern administrative dashboard interface.`,
-    image: '/assets/project/project7.png',
-    link: 'https://115roots.com/',
-    github: 'https://github.com/rahmatez/115-roots',
-    techStack: [
-      techStacks.php,
-      techStacks.laravel,
-      techStacks.mysql,
-      techStacks.tailwind,
-      techStacks.js,
-      techStacks.css
-    ],
-  },
-
-  {
-    title: 'Mindaka Village Portal',
-    description: `Mindaka Village Portal is a web application that serves as a village profile website and administrative dashboard for managing public content, including news, gallery, village budget, geography, government information, social media profiles, MSME products, and complaint management system. The project is built primarily with TypeScript, CSS, and other supporting technologies.`,
-    image: '/assets/project/project8.png',
-    link: 'https://github.com/rahmatez/',
-    github: 'https://github.com/rahmatez/village-portal-nextjs',
-    techStack: [
-      techStacks.next,
-      techStacks.react,
-      techStacks.typescript,
-      techStacks.node,
-      techStacks.express,
-      techStacks.postgresql
-    ],
-  },
-
-  {
-    title: 'e-Ticketing System Brigata Curva Sud',
-    description: `As a full-stack developer for the Brigata Curva Sud e-Ticketing System. This web-based application was developed using Laravel 10
-    to facilitates online match ticket booking for BCS supporters. The application is integrated with Midtrans for secure payments, 
-    generates tickets with unique QR codes for validation, and features match management, sales reporting, notifications, and contact support.`,
-    image: '/assets/project/project1.png',
-    link: 'https://github.com/rahmatez/',
-    github: 'https://github.com/rahmatez/',
-    techStack: [
-      techStacks.php,
-      techStacks.laravel,
-      techStacks.mysql,
-      techStacks.bootstrap,
-      techStacks.js,
-      techStacks.css
-    ],
-  },
-
-  {
-    title: 'PTIP Logistics System',
-    description: `Developed and added a cancellation feature to all menus in the PTIP Logistics System. 
-    This application is a comprehensive logistics management application with features 
-    covering the entire procurement and inventory management cycle. Built with a solid 
-    MVC architecture using CodeIgniter, this system demonstrates a strong understanding 
-    of business processes in the construction logistics sector.`,
-    image: '/assets/project/project2.png',
-    link: 'https://github.com/rahmatez/',
-    github: 'https://github.com/rahmatez/',
-    techStack: [
-      techStacks.php,
-      techStacks.codeigniter,
-      techStacks.mysql,
-      techStacks.jquery,
-      techStacks.bootstrap,
-      techStacks.js
-    ],
-  },
-
-  {
-    title: 'Member Information System Application',
-    description: `As a full-stack developer for the Member Information System Application
-    for the Saka Millennial organization in Banyumas Regency, this application is a modern
-    digital solution designed to support effectiveness and efficiency in community management.
-    By providing features such as member management, activities, and articles in one centralized platform`,
-    image: '/assets/project/project3.png',
-    link: 'https://github.com/rahmatez/',
-    github: 'https://github.com/rahmatez/',
-    techStack: [
-      techStacks.php,
-      techStacks.laravel,
-      techStacks.mysql,
-      techStacks.tailwind,
-      techStacks.js,
-      techStacks.css
-    ],
-  },
-
-  {
-    title: 'rahmatez-portfolio',
-    description: `Project rahmatez-portfolio is a modern portfolio website
-    that I developed using React, TypeScript, and TailwindCSS. This website
-    is fully responsive and designed to showcase my professional skills, various
-    projects, certifications, and my experience as a Frontend & Backend Developer.
-    This project provides an attractive appearance as well as optimal performance to
-    strengthen my personal branding in the digital world.`,
-    image: '/assets/project/project4.png',
-    link: 'https://rahmatez.vercel.app/',
-    github: 'https://github.com/rahmatez/rahmatez-portfolio',
-    techStack: [
-      techStacks.typescript,
-      techStacks.react,
-      techStacks.vite,
-      techStacks.tailwind,
-    ],
-  },
-
-   {
-    title: 'Stock Management',
-    description: `Project Stock Management is a GitHub-based application that I developed
-    to efficiently monitor, manage, and analyze stock inventory. This application is designed
-    with a focus on ease of use, real-time data integration, and stock analysis visualization.
-    Supported by modern technology and GitHub repository management, this project provides a
-    digital solution that helps users track inventory and make business decisions more accurately.`,
-    image: '/assets/project/project5.png',
-    link: 'https://story-app-dicoding-1313c.web.app/',
-    github: 'https://github.com/rahmatez/story-app-starter-project',
-    techStack: [
-      techStacks.typescript,
-      techStacks.react,
-      techStacks.next,
-      techStacks.prisma,
-      techStacks.postgres, 
-      techStacks.tailwind
-    ],
-  },
-
-  {
-    title: 'Crypto Tracker',
-    description: `Project crypto-tracker is a production-ready cryptocurrency
-    dashboard developed using Next.js, TypeScript, and Tailwind CSS.
-    The dashboard displays live cryptocurrency market prices, a list of
-    top movers, a persistent watchlist, detailed coin analytics, and a USD/IDR
-    currency switcher. With modern technologies and CoinGecko data integration, 
-    this project provides a comprehensive solution for real-time monitoring and
-    analysis of crypto assets.`,
-    image: '/assets/project/project6.png',
-    link: 'https://crypto-tracker-chi-pearl.vercel.app/',
-    github: 'https://github.com/rahmatez/crypto-tracker',
-    techStack: [
-      techStacks.typescript,
-      techStacks.react,
-      techStacks.next,
-      techStacks.tailwind,
-    ],
-  },
-
-  
-];
+type FilterValue = 'all' | ProjectCategory;
 
 export function Projects() {
+  const [activeFilter, setActiveFilter] = useState<FilterValue>('all');
+
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === 'all') return projects;
+    return projects.filter((project) => project.categories.includes(activeFilter));
+  }, [activeFilter]);
+
+  const filters: { value: FilterValue; label: string }[] = [
+    { value: 'all', label: 'All' },
+    ...projectCategories.map((category) => ({
+      value: category,
+      label: PROJECT_CATEGORY_LABELS[category],
+    })),
+  ];
+
   return (
     <SectionBackground>
       <section id="projects">
         <div className="container mx-auto px-8">
-          <SectionTitle subtitle="Crafting code into solutions I’m proud of, from concept to creation">
+          <SectionTitle subtitle="Crafting code into solutions I'm proud of, from concept to creation">
             Projects
           </SectionTitle>
 
+          <AnimateIn delay={80}>
+            <div className="max-w-6xl mx-auto mb-8 flex flex-wrap gap-2 justify-center">
+              {filters.map((filter) => (
+                <button
+                  key={filter.value}
+                  type="button"
+                  onClick={() => setActiveFilter(filter.value)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    activeFilter === filter.value
+                      ? 'bg-blue-600 text-white scale-105'
+                      : 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700 hover:scale-105'
+                  }`}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+          </AnimateIn>
+
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
+            {filteredProjects.map((project, index) => (
+              <AnimateIn key={project.slug} delay={(index % 3) * 100}>
+                <ProjectCard project={project} />
+              </AnimateIn>
             ))}
           </div>
+
+          {filteredProjects.length === 0 && (
+            <p className="text-center text-gray-500 dark:text-gray-400 py-12">
+              No projects found in this category.
+            </p>
+          )}
         </div>
       </section>
     </SectionBackground>
