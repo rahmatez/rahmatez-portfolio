@@ -31,7 +31,10 @@ import {
   SiNextdotjs,
   SiTypescript,
   SiPrisma,
-  SiSupabase
+  SiSupabase,
+  SiGo,
+  SiVercel,
+  SiDocker,
 } from 'react-icons/si';
 import { FaChartBar, FaProjectDiagram } from 'react-icons/fa';
 
@@ -69,11 +72,57 @@ const techStacks = {
   vite : { icon: SiVite, name: 'Vite', color: '#646CFF' },
   prisma : { icon: SiPrisma, name: 'Prisma', color: '#0C344B' },
   postgres : { icon: SiPostgresql, name: 'PostgreSQL', color: '#336791' },
-  supabase : { icon: SiSupabase, name: 'Supabase', color: '#3ECF8E' }, // Using PostgreSQL icon for Supabase
+  supabase : { icon: SiSupabase, name: 'Supabase', color: '#3ECF8E' }, // Using PostgreSQL 
+  go : { icon: SiGo, name: 'Go', color: '#00ADD8' },
+  vercel : { icon: SiVercel, name: 'Vercel', color: '#000000' },
+  docker : { icon: SiDocker, name: 'Docker', color: '#2496ED' },
 };
 
 // Define projects
 const projects = [
+  {
+    title: 'World Cup 2026 Score',
+    description: `This is a World Cup 2026 website, built with Next.js 16, TypeScript, and Tailwind CSS 4. The application provides World Cup 2026 information, schedules, and live updates in Indonesian language, utilizing Indonesian time zones for better user experience. The codebase is primarily TypeScript-based, ensuring type safety and maintainability across the frontend application.`,
+    image: '/assets/project/project12.png',
+    link: 'https://worldcup-2026-rahmatez.vercel.app/',
+    github: 'https://github.com/rahmatez/worldcup2026-nextjs',
+    techStack: [
+      techStacks.next,
+      techStacks.typescript,
+      techStacks.tailwind,
+    ],
+  },
+
+  {
+    title: 'Makan Bang',
+    description: `This is a full-stack food ordering application called MakanBang, built with Next.js, PostgreSQL, Auth.js, and Midtrans Snap for payment processing. The application is primarily developed in TypeScript and features a complete backend and frontend integrated solution for restaurant food ordering, user authentication, and secure payment handling.`,
+    image: '/assets/project/project11.png',
+    link: 'https://github.com/rahmatez/makanbang-fullstack-nextjs',
+    github: 'https://makanbang-umber.vercel.app/',
+    techStack: [
+      techStacks.next,
+      techStacks.typescript,
+      techStacks.node,
+      techStacks.postgresql
+    ],
+  },
+
+  {
+    title: 'StockFlow-Go',
+    description: `This is StockFlow, an Inventory & Order Management System built with Go as a SaaS platform. The application provides a comprehensive dashboard to manage products, stock levels, orders, and generate business reports all from a single interface. It enables businesses to streamline their inventory operations and order tracking efficiently. Designed to help businesses optimize their supply chain and operational management.`,
+    image: '/assets/project/project10.png',
+    link: 'https://stock-flow-go.vercel.app/dashboard',
+    github: 'https://github.com/rahmatez/stockFlow-go',
+    techStack: [
+      techStacks.go,
+      techStacks.postgresql,
+      techStacks.node,
+      techStacks.docker,
+      techStacks.typescript,
+      techStacks.next,
+    ],
+  },
+
   {
     title: 'Indonesian Tour Travel',
     description: `Indonesian Tour Travel is a web application that serves as a tour travel website and administrative dashboard for managing public content, including news, gallery, village budget, geography, government information, social media profiles, MSME products, and complaint management system. The project is built primarily with TypeScript, Next.js, and other supporting technologies.`,
@@ -95,7 +144,7 @@ const projects = [
     description: `115-roots is a comprehensive Laravel-based content management system and landing page specifically built for the PSS Sleman supporter community,
     designed to efficiently manage and publish public content including blog articles, photo galleries, event information, and an integrated online shop, all through an intuitive and modern administrative dashboard interface.`,
     image: '/assets/project/project7.png',
-    link: 'https://github.com/rahmatez/',
+    link: 'https://115roots.com/',
     github: 'https://github.com/rahmatez/115-roots',
     techStack: [
       techStacks.php,
